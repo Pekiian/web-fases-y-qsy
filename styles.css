@@ -1,0 +1,149 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+*, body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    max-width: 70%;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+main{
+    min-height: 65vh;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#respuestas{
+    min-height: 20vh;
+    max-width: 60%;
+    margin: 0 auto;
+
+    /* display: flex;
+    align-self: center;
+    justify-content: space-between;
+    text-align: center; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#respuesta{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+}
+
+@media(max-width: 768px){
+    #respuestas{
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    #respuestas:last-child{
+        margin-bottom: 2rem;
+    }
+}
+
+#respuestas li{
+    list-style: none;
+    display: block;
+    font-weight: bold;
+}
+
+textarea,
+input {
+  font-family: inherit;
+  font-size: 1rem;
+  color: inherit;
+  padding: .7rem;
+  border-radius: 20px;
+}
+
+textarea {
+  resize: none;
+  width: 300px;
+  height: 200px;
+}
+
+input {
+  margin: 0;
+  width: 300px;
+}
+
+.btn-calcular{
+    border-radius: 30px;
+    padding: 1em 2em;
+    background-color: #333;
+    color: white;
+    border: none;
+    transition: filter .1s ease-in-out;
+    align-self: flex-end;
+}
+
+.btn-calcular:hover, .btn-calcular:focus{
+    filter: brightness(85%);
+    cursor: pointer;
+    border: 1px solid #e1e1e1;
+}
+
+.site-header{
+    text-align: center;
+    padding: 2rem;
+}
+
+.nav-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 2rem;
+}
+
+.nav-box a{
+    transition: filter  .1s ease-in;
+}
+
+.nav-box a:hover{
+    filter: brightness(25%);
+}
+
+.active{
+    color: #333;
+}
+
+.site-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: .7rem;
+}
+
+.icon-item{
+    transition: filter .1s ease-in;
+}
+
+.icon-item:hover{
+    filter: brightness(85%);
+}

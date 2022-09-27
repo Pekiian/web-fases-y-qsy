@@ -5,6 +5,7 @@ const mm = document.querySelector('#mm')
 const mv = document.querySelector('#mv')
 const vv = document.querySelector('#vv')
 const respuestas = document.querySelector('#respuestas')
+const section = document.querySelector('#section-respuesta')
 
 class Elemento{
     constructor(nombre, cantidad, unidad, estado, densidad){
@@ -57,7 +58,7 @@ class Elemento{
 
     vv(solutos){
         if(this.estado == 'n'){
-            return 'No se puede calcular'
+            return 'NSPC'
         } else{
             let xTotal = 0
             solutos.forEach(soluto => {
@@ -99,11 +100,43 @@ btn.addEventListener('click', (e) => {
 
     //solutos2.forEach(lol => console.log(`Lol: ${JSON.stringify(lol)}`))
 
+    let i = 1
+
     solutos2[0].forEach(elemento => {
         if(elemento['nombre'] != 'agua'){
+            // let divResp = document.createElement('div')
+            // divResp.setAttribute('class','respuestas')
+            
+            // let mm = document.createElement('p')
+            // mm.setAttribute('id','mm')
+            // mm.setAttribute('class','respuesta')
+            // mm.innerHTML+=`<p>${elemento.mm(solutos2[0])}</p>`
+
+            // let mv = document.createElement('p')
+            // mv.setAttribute('id','mv')
+            // mv.setAttribute('class','respuesta')
+            // mv.innerHTML+=`<p>${elemento.mv(solutos2[0])}</p>`
+
+            // let vv = document.createElement('p')
+            // vv.setAttribute('id','vv')
+            // vv.setAttribute('class','respuesta')
+            // vv.innerHTML+=`<p>${elemento.vv(solutos2[0])}</p>`
+
+            // divResp.appendChild(mm)
+            // divResp.appendChild(mv)
+            // divResp.appendChild(vv)
+            // section.appendChild(divResp)
+
             mm.innerHTML+=`<p>${elemento.mm(solutos2[0])}</p>`
             mv.innerHTML+=`<p>${elemento.mv(solutos2[0])}</p>`
             vv.innerHTML+=`<p>${elemento.vv(solutos2[0])}</p>`
+            if(Object.keys(solutos2[0]).length-1== i){
+                mm.innerHTML+='<div class="separator"></div>'
+                mv.innerHTML+='<div class="separator"></div>'
+                vv.innerHTML+='<div class="separator"></div>'
+            }
+            console.log(Object.keys(solutos2[0]).length-1, i)
+            i+=1
         }
     })
 })

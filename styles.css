@@ -54,13 +54,22 @@ form{
 }
 
 @media(max-width: 768px){
-    #respuestas{
+    /* #respuestas{
+        display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 1.5rem;
+    } */
+    #respuestas{
+        gap: 2.5rem;
+        margin: 0;
+        max-width: 100%;
     }
     #respuestas:last-child{
         margin-bottom: 2rem;
+    }
+    .separator{
+        width: 100%;
     }
 }
 
@@ -68,6 +77,15 @@ form{
     list-style: none;
     display: block;
     font-weight: bold;
+}
+
+.separator{
+    display: block;
+    height: 2px;
+    width: 100%;
+    text-align: center;
+    background-color: #e1e1e1;
+    margin: .5rem 0;
 }
 
 textarea,
@@ -138,6 +156,7 @@ input {
     flex-direction: column;
     gap: 15px;
     padding: .7rem;
+    margin-top: 2rem;
 }
 
 .icon-item{
@@ -146,4 +165,34 @@ input {
 
 .icon-item:hover{
     filter: brightness(85%);
+}
+
+/** Explicacion **/
+.link-us{
+    text-decoration: none;
+}
+
+.main-explicacion{
+    text-align: justify;
+    line-height: 1.7;
+    font-size: 1.3rem;
+}
+
+.main-explicacion p{
+    color: #5d5d5d;
+}
+
+.main-explicacion h2{
+    text-decoration: underline;
+}
+
+.main-explicacion > div{
+    margin-bottom: 5rem;
+}
+
+blockquote{
+    font-weight: bold;
+    margin: 1rem 0;
+    text-align: center;
+    color: #333;
 }
